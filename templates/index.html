@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>КЕК</h1>
+<h2>Забито : {{ zabil }}</h2>
+<h2>Сделано : {{ sdelano }}</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="1">Текст:</label>
+    <input id = '1' name="key"  type="text"/>
+    <input type="submit" value="Кул" id = '1'><br/>
+</form>
+<form method="post">
+    {% csrf_token %}
+    <input name = 'do' type = 'text'/>
+    <input type = 'submit' value="Выполнить">
+</form>
+<form method = "post">
+    {% csrf_token %}
+    <input name= "not" type="text"/>
+    <input type = 'submit' value="Забить">
+</form>
+<form method = "post">
+    {% csrf_token %}
+    <input type="submit" value = "Очистить всё" name = 'clear'>
+</form>
+    <ol>
+    {% for item in list %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ol>
+</body>
+</html>
